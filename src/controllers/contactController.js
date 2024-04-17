@@ -55,5 +55,13 @@ exports.updateContact = async (req, res) => {
     } catch (error) {
       res.status(500).json({ message: 'Internal server error' });
     }
-  };
+};
 
+exports.deleteContact = async (req, res) => {
+    try {
+      await Contact.findOneAndDelete({ _id: req.params.id, user: req.user._id });
+      res.status(200).json({ message: 'Contact deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ message: 'Internal server error' });
+    }
+};
