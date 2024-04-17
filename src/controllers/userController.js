@@ -4,13 +4,26 @@ const jwt = require('jsonwebtoken');
 const config = require('../../config/config');
 
 exports.register = async (req, res) => {
-    // TODO: pull the username, email and password from the request body
-    // if the user exists then give a status 400 with a message of Email already User.exists...
+    try {
+        const { username, email, password } = req.body;
 
-    // TODO: hash password and create a new User object
-    // and save the user to the database
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: 'Email already exists' });
+        }
+        
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-    // return a response status of 201 (created) with a message of User registered successfully
-    // else catch an error returning a status of 500 (server error) with a message of internal server error
-    res.status(418).json({ message: 'lets code our register endpoint or i am a teapot!' });
-}
+        const newUser = new User({
+            username,
+            email,
+            password: hashedPassword
+        });
+        
+        await newUser.save();
+
+        res.status(201).json({ message: 'User registered successfully' });
+    } catch (err) {
+        res.status(500).json({ message: 'Internal server error' })
+    }
+};
