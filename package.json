@@ -1,0 +1,14 @@
+{
+  "name": "contact-be",
+  "version": "1.0.0",
+  "description": "An Express JS Back end API, using [MongoDB](https://www.mongodb.com/) as the database, [ExpressJS](https://expressjs.com/) as the api platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
