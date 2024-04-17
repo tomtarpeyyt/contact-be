@@ -7,4 +7,7 @@ An Express JS Back end API, using [MongoDB](https://www.mongodb.com/) as the dat
 - install dependencies `npm i`
 - run dev server `npm run dev`
 
+## Plan
+- [Whimsical Contact Application](https://whimsical.com/contacts-app-8AU3ccAZFjvg5AXEWMUqjT)
+
 
