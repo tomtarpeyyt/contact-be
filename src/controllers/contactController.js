@@ -42,3 +42,18 @@ exports.getContactById = async (req, res) => {
       }
 };
 
+exports.updateContact = async (req, res) => {
+    try {
+      const { name, email, telephone, address, category } = req.body;
+  
+      await Contact.findOneAndUpdate(
+        { _id: req.params.id, user: req.user._id },
+        { name, email, telephone, address, category }
+      );
+  
+      res.status(200).json({ message: 'Contact updated successfully' });
+    } catch (error) {
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  };
+
