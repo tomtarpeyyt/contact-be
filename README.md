@@ -1,5 +1,5 @@
 # contact-be
-An Express JS Back end API, using [MongoDB](https://www.mongodb.com/) as the database, [ExpressJS](https://expressjs.com/) as the api platform.
+An Express JS Back end API, using [MongoDB](https://www.mongodb.com/) as the database, [ExpressJS](https://expressjs.com/) as the api platform. using the [Mongoose](https://mongoosejs.com/docs/) ORM
 
 ## Get Started
 - clone this repo `git clone https://github.com/tomtarpeyyt/contact-be`
