@@ -1,1 +1,1 @@
-console.log('time2code');
+console.log('time2code - our contact api');
