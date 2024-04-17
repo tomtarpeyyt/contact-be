@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config/config');
+const userRoutes = require('./src/routes/userRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,7 +17,9 @@ mongoose.connect(config.dbUrl)
 
 app.use(express.json());
 
-// TODO: ass user and contact routes
+// TODO: add contact route
+app.use('/api/users', userRoutes);
+
 
 // TODO: Remove this endpoint once we have routes
 app.get('/', (req, res) => {

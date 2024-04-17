@@ -4,7 +4,7 @@ const userController = require('../controllers/userController');
 
 
 // TODO: change this route to a post!
-router.get('/reguster', userController.register);
+router.get('/register', userController.register);
 
 
 module.exports = router;
